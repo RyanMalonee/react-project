@@ -1,0 +1,395 @@
+/* Dylan Johnson CSCE242 Project Part 3 */
+/* https://maketintsandshades.com/#287561,6E3A1A,4D4400,5F5F31,687871 color pallet */
+:root {
+	/* Colors */
+    --main-title: #4d2912;
+    --primary-color: #6e3a1a;
+    --secondary-color: rgb(61, 150, 164); /*#287561;*/
+    --tertiary-color: var(--secondary-color);
+    --butiary-color: white;
+    --pentiary-color: #686868;
+    --really-light-grey: #dfdfd6;
+    --septiary-color: #6e3a1a;
+    --ham-back-color: var(--secondary-color);
+    --most-text: var(--main-title);
+    --background: white;
+    --hamburger-color: var(--background);
+    --light-primary-color: #c5b0a3;
+    --modal-color: rgba(104, 104, 104, 0.4);
+    /* Other vals*/
+    --glaze-height: fit-content;
+    --title-left-padding: 20px;
+    --top-header-height: 75px;
+    --all-content-width: 94vw;
+    --top-header-padding: 10px;
+    --mobile-header-heights: 52px;
+    --main-content-margin-top-addition: 20px;
+    --nav-border-radius: 2px;
+    --main-img-border-radius: 2px;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Main typography */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+}
+
+* {
+    color: var(--most-text);
+}
+
+/* Structure */
+body, html{
+    margin:0;
+    padding:0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#all-content {
+    width: var(--all-content-width);
+}
+
+#main-content {
+    margin-top: 10px;   
+}
+
+#remaining-content {
+    margin-left: calc(100vw - var(--all-content-width));
+    margin-right: calc(100vw - var(--all-content-width));
+    margin-top: 85px;
+}
+
+#remaining-content-child {
+    justify-content: space-around !important;
+}
+
+#office-map iframe {
+    width: 100%;
+    height: 300px;
+}
+
+#edit-dropdown {
+    display: none;
+    position: absolute;
+    border-bottom-left-radius: var(--nav-border-radius);
+    border-bottom-right-radius: var(--nav-border-radius);
+}
+
+#edit {
+    width: 81.3833px;
+}
+
+#edit-dropdown div {
+    display: block !important;
+    width: 100%;
+}
+
+#dropdown-container {
+    overflow: hidden;
+}
+
+.dropdown .edit-div:hover {
+    background-color: var(--primary-color);
+}
+    
+.dropdown a {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#dropdown-container:hover .dropdown {
+    display: block !important;
+}
+
+#edit-dropdown {
+    background-color: var(--secondary-color);
+}
+
+#years {
+    height: fit-content;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#years ul {
+    width: fit-content;
+    padding-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+}
+
+#years li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#years a {
+    text-decoration: none;
+}
+
+.delete-button {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-button a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+}
+
+.delete-button h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    height: fit-content;
+    color: var(--background);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.placcard {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--really-light-grey);
+}
+
+.placcard p {
+    width: 100%;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    text-align: center;
+    /*color: var(--butiary-color); */
+}
+
+.remaining-content {
+    padding-top: 0px;
+}
+
+.placcard p {
+    font-weight: bold;
+}
+
+.gallery-info {
+    margin-top: 5px !important;
+}
+
+/* Utility classes */
+.hide-force {
+    display: none !important;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.columns-all {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.contain {
+	object-fit: contain;
+}
+
+.contain-img {
+	object-fit: contain;
+}
+
+.right {
+    float: right;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.fill-width {
+    width: 100%;
+}
+
+.desktop {
+    display: none;
+}
+
+.center-columns-horizontal {
+    justify-content: center;
+}
+
+.center-columns {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries*/
+@media only screen and (min-width:687px) {
+    /* Variables */
+    :root {
+        --top-header-height: 200px;
+        --top-header-padding: 30px;
+        --all-content-width: 80vw;
+    }
+    /* Structure */
+    #all-content {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: var(--all-content-width);
+    }
+
+    #main-content {
+        margin-top: calc(30px + var(--main-content-margin-top-addition) + var(--top-header-height));
+    }
+
+    #remaining-content {
+        margin: 0px;
+    }
+
+    .desktop-pointer:hover {
+	cursor: pointer;
+    }
+
+    #years {
+        /*display: inline-block;*/
+	display: none;
+    }
+
+    #left-pane-about {
+        padding-top: 30px;
+    }
+
+    .placcard img {
+	height: 210px;
+    }
+
+    .columns-mobile {
+	display: block;
+    }
+
+    /* Utility classes */
+    .columns {
+        display: flex;
+    }
+
+    .columns-mobile {
+	display: block;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    
+    /* a class that centers column classes */
+    .center-columns {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        /* basically (though not quite) the opposite of diplay: none */
+        display: unset;
+    }
+
+    .one {
+        flex: 1;
+    }
+
+    .two {
+        flex: 2;
+    }
+
+    .three {
+        flex: 3;
+    }
+
+    .four {
+        flex: 4;
+    }
+
+    .five {
+        flex: 5;
+    }
+
+    .nine {
+        flex: 9;
+    }
+
+    #remaining-content .one {
+	margin-right: 10px;
+    }
+
+    #remaining-content {
+	width: 583px;
+    }
+}
+
+@media only screen and (min-width:828px) {
+    #remaining-content {
+	width: 700px;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    #remaining-content {
+	width: 700px;
+    }
+}
+
+@media only screen and (min-width:837px) {
+    #remaining-content {
+	width: 750px;
+    }
+}
+
+@media only screen and (min-width:1032px) {
+    #remaining-content {
+	margin-left: 0px;
+	width: auto;
+    }
+}
